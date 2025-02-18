@@ -9,12 +9,8 @@ terraform {
   }
 }
 
-provider "aws" {
-  region     = "us-east-1"
-}
-
 resource "aws_security_group" "sg" {
     name        = "allow_tls-${count.index}"
     description = "Allow TLS inbound traffic and all outbound traffic"
-    count = 4 
+    count = 1
 }
